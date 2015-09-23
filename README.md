@@ -1,2 +1,2 @@
 # wsse-header
-wsse-header is a simple library to generate WSSE Header
+The wsse-header is a simple and easy way to generate WSSE Headers for authentication in Symfony2 applications
