@@ -1,0 +1,32 @@
+{
+  "name": "wsse-header",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/oumarPoulo/wsse-header",
+  "authors": [
+    "oumarPoulo <aob.diallo@gmail.com>"
+  ],
+  "description": "wsse-header is a simple library to generate WSSE Header",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Encode",
+    "Digest",
+    "Password",
+    "Generate",
+    "Header",
+    "Wsse",
+    "build",
+    "header",
+    "wsse"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
