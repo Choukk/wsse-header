@@ -32,7 +32,8 @@
       for(var i = 1; i < this.passwordEncodingIterations; i++) {
         passwordEncoded = CryptoJS.SHA512(passwordEncoded.concat(CryptoJS.enc.Utf8.parse(salted)));
       }
-      return this.passwordEncodingAsBase64 ? passwordEncoded.toString(CryptoJS.enc.Base64) : passwordEncoded;
+      var result = this.passwordEncodingAsBase64 ? passwordEncoded.toString(CryptoJS.enc.Base64) : passwordEncoded;
+      return result;
   };
 
   WsseHeader.generateCreatedDate = function() {
@@ -42,6 +43,16 @@
   WsseHeader.setup = function(options) {
     options = options || {};
     this.passwordEncodingIterations = options.passwordEncodingIterations || 5000;
-    this.passwordEncodingAsBase64 = options.passwordEncodingAsBase64 === 'false' ? false : true;
+    this.passwordEncodingAsBase64 = options.passwordEncodingAsBase64 === false ? false : true;
   };
+
+  WsseHeader.buildHttpHeader = function(credentials) {
+    var _wsseHeader = this.buildWsseHeader(credentials);
+    var header = {
+      'Authorization': 'WSSE profile="UsernameToken"',
+      'X-WSSE': _wsseHeader
+    };
+    return header;
+  };
+
 }());
