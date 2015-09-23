@@ -24,7 +24,6 @@
     
     var raw = nonce.concat(createdDate).concat(passwordEncoded);
     raw = (this.useSaltOnDigest) ? raw + '{' + this.salt + '}' : raw;
-    console.log(this.useSaltOnDigest, raw);
     var _sha1 = CryptoJS.SHA1(raw);
     var result = _sha1.toString(CryptoJS.enc.Base64);
     return result;
