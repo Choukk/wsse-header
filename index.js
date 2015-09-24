@@ -12,31 +12,36 @@
     var nonce = this.generateNonce();
     var createdDate = this.generateCreatedDate();
     var passwordDigest = this.generatePasswordDigest(nonce, createdDate, passwordEncoded);
+    
     return 'UsernameToken Username="' + username + '", PasswordDigest="' + passwordDigest + '", Nonce="' + nonce + '", Created="' + createdDate + '"';
   };
 
   WsseHeader.generateNonce = function() {
     var nonce = Math.random().toString(36).substring(2);
+    
     return CryptoJS.enc.Utf8.parse(nonce).toString(CryptoJS.enc.Base64);
   };
 
   WsseHeader.generatePasswordDigest = function(nonce, createdDate, passwordEncoded) {
-    
     var raw = nonce.concat(createdDate).concat(passwordEncoded);
-    raw = (this.useSaltOnDigest) ? raw + '{' + this.salt + '}' : raw;
+    raw = (this.useSaltOnDigest && typeof this.salt !== 'undefined' && this.salt.length) ? raw + '{' + this.salt + '}' : raw;
     var _sha1 = CryptoJS.SHA1(raw);
     var result = _sha1.toString(CryptoJS.enc.Base64);
+    
     return result;
   };
 
   WsseHeader.encodePassword = function(password, salt) {
     this.salt = salt;
-    var salted = (typeof salt !== 'undefined') ? password + '{' + salt + '}' : salt;
+    var salted = (typeof salt !== 'undefined' && salt.length) ? password + '{' + salt + '}' : password;
     var passwordEncoded = CryptoJS.SHA512(salted);
+
     for(var i = 1; i < this.passwordEncodingIterations; i++) {
       passwordEncoded = CryptoJS.SHA512(passwordEncoded.concat(CryptoJS.enc.Utf8.parse(salted)));
     }
+
     var result = this.passwordEncodingAsBase64 ? passwordEncoded.toString(CryptoJS.enc.Base64) : passwordEncoded;
+    
     return result;
   };
 
@@ -57,6 +62,7 @@
       'Authorization': 'WSSE profile="UsernameToken"',
       'X-WSSE': _wsseHeader
     };
+    
     return header;
   };
 
