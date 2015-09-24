@@ -1,6 +1,6 @@
 {
   "name": "wsse-header",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "The wsse-header is a simple and easy way to generate WSSE Headers for authentication in Symfony2 applications",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "Password"
   ],
   "author": "Diallo Alpha Oumar Binta <aob.diallo@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/oumarPoulo/wsse-header/issues"
   },
