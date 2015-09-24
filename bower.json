@@ -1,7 +1,7 @@
 {
   "name": "wsse-header",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/oumarPoulo/wsse-header",
   "authors": [
     "oumarPoulo <aob.diallo@gmail.com>"
@@ -21,7 +21,7 @@
     "header",
     "wsse"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
