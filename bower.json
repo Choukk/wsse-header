@@ -1,17 +1,12 @@
 {
   "name": "wsse-header",
-  "main": "index.js",
+  "main": "wsse.js",
   "version": "0.0.2",
   "homepage": "https://github.com/oumarPoulo/wsse-header",
   "authors": [
     "oumarPoulo <aob.diallo@gmail.com>"
   ],
   "description": "The wsse-header is a simple and easy way to generate WSSE Headers for authentication in Symfony2 applications",
-  "dependencies": {
-    "crypto-js": "^3.1.5",
-    "moment": "^2.10.6",
-    "require": "^2.4.20"
-  },
   "moduleType": [
     "node"
   ],
