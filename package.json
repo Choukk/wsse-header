@@ -1,14 +1,15 @@
 {
   "name": "wsse-header",
-  "version": "0.0.2",
-  "description": "The wsse-header is a simple and easy way to generate WSSE Headers for authentication in Symfony2 applications",
+  "title": "wsse-header",
+  "version": "1.0.1",
+  "description": "wsse is a simple and easy way to generate WSSE authentication header in JavaScript (e.g Symfony2 applications)",
   "main": "wsse.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oumarPoulo/wsse-header.git"
+    "url": "git+https://github.com/oumarPoulo/wsse-header.git"
   },
   "keywords": [
     "wsse",
@@ -20,7 +21,8 @@
     "Password",
     "Digest",
     "Encode",
-    "Password"
+    "Password",
+    "Symfony2"
   ],
   "author": "Diallo Alpha Oumar Binta <aob.diallo@gmail.com>",
   "license": "MIT",
@@ -29,7 +31,17 @@
   },
   "homepage": "https://github.com/oumarPoulo/wsse-header",
   "dependencies": {
-    "moment": "~2.10.6",
-    "crypto-js": "~3.1.5"
+    "crypto-js": "^3.1.5",
+    "moment": "^2.10.6"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.1",
+    "gulp-using": "0.0.1",
+    "mocha": "^2.3.3"
   }
 }
