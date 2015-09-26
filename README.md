@@ -24,7 +24,7 @@ var credentials = {
   username: 'oumarpoulo',
   passwordEncoded: encodePassword
 };
-var headerToken = wsse.buildWsse(credentials);
+var headerToken = wsse.buildWsseHeader(credentials);
 // e.g 'UsernameToken Username="oumarpoulo", PasswordDigest="2mQO9bW09K0gA7qpDPHNmcNSCdA=", Nonce="ZnMxcTAyMXFoczVkYm82cg==", Created="2015-09-24T13:30:19+02:00"'
 console.log(headerToken);
 var httpHeader = wsse.buildHttpHeader(credentials);
