@@ -1,7 +1,7 @@
 {
   "name": "wsse-header",
   "title": "wsse-header",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "wsse is a simple and easy way to generate WSSE authentication header in JavaScript (e.g Symfony2 applications)",
   "main": "wsse.js",
   "scripts": {
@@ -43,5 +43,8 @@
     "gulp-uglify": "^1.4.1",
     "gulp-using": "0.0.1",
     "mocha": "^2.3.3"
+  },
+  "directories": {
+    "test": "test"
   }
 }

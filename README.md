@@ -35,7 +35,7 @@ var httpHeader = wsse.buildHttpHeader(credentials);
  */
 console.log(httpHeader);
 ```
-_version 1.0.1_
+_version 1.1.0_
 _licence MIT_
 
 **Author:** Diallo Alpha Oumar Binta (<aob.diallo@gmail.com>)
