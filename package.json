@@ -1,7 +1,7 @@
 {
   "name": "wsse-header",
   "title": "wsse-header",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "wsse is a simple and easy way to generate WSSE authentication header in JavaScript (e.g Symfony2 applications)",
   "main": "wsse.js",
   "scripts": {
