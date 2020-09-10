@@ -23,7 +23,7 @@
     var passwordEncoded = credentials.passwordEncoded;
     var nonce = wsse.generateNonce();
     var createdDate = wsse.generateCreatedDate();
-    var passwordDigest = wsse.generatePasswordDigest(nonce, createdDate, passwordEncoded);
+    var passwordDigest = wsse.generatePasswordDigest(Buffer.from(nonce, 'base64').toString('ascii'), createdDate, passwordEncoded);
 
     return 'UsernameToken Username="' + username + '", PasswordDigest="' + passwordDigest + '", Nonce="' + nonce + '", Created="' + createdDate + '"';
   };
